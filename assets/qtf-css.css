@@ -1,0 +1,33 @@
+.qtf-multi-language-field::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.qtf-language-button {
+	position: relative;
+	top: 3px;
+	left: -1px;
+	z-index: 100;
+	background: #f1f1f1;
+	padding: 7px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.qtf-input {
+	position: static;
+}
+
+.qtf-language-button.is-current {
+	border-bottom-color: white;
+	background: white;
+}
+
+.qtf-multi-language-field .qtf-input {
+	display: none;
+}
+
+.qtf-multi-language-field .qtf-input.is-current {
+	display: block;
+}

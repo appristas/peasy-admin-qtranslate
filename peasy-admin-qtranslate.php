@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) or die( 'Tacita' );
 
-add_action( 'peasy_init', function() {
-	
-	
+add_action( 'peasy_register', function() {
+	require_once( __DIR__ . '/classes/class-translatabletextfield.php' );
+	\PeasyAdmin\PluggableFields::register_field( 'translatable_text', PeasyAdminQtranslate\TranslatableTextField::class );
 } );

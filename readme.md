@@ -2,7 +2,7 @@
 
 This plugin adds qTranslate field to Peasy Admin.
 
-# Dependencies
+## Dependencies
 
 - Peasy Admin v1.1.0
 - qTranslate-X

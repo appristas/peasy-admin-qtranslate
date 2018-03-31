@@ -29,7 +29,6 @@ class TranslatableTextField extends \PeasyAdmin\Field {
 	}
 
 	private function render_fields() {
-		var_dump( $this->get_value() );
 		$splitted_values = \qtranxf_split( $this->get_value(), $quicktags = true );
 		foreach ( $this->languages as $code ) {
 			$name = esc_attr( $this->get_name() . '[' . $code . ']' );
@@ -39,7 +38,7 @@ class TranslatableTextField extends \PeasyAdmin\Field {
 				type="text"
 				data-language="<?php echo esc_attr( $code ); ?>"
 				name="<?php echo $name; ?>"
-				value="<?php esc_attr( $splitted_values[$code] ); ?>"
+				value="<?php echo esc_attr( $splitted_values[ $code ] ); ?>"
 				class="qtf-input<?php echo esc_attr( $currentClass ); ?>"
 			/>
 			<?php
@@ -70,6 +69,10 @@ class TranslatableTextField extends \PeasyAdmin\Field {
 		?>
 		</div>
 		<?php
+	}
+
+	public function process_value( $value ) {
+		return qtranxf_join_b( $value );
 	}
 
 }
